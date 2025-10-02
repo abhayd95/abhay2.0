@@ -37,11 +37,19 @@ import { motion } from 'framer-motion';
  *   size="large"
  * />
  * 
+ * // Different positioning options
+ * <ProfileImage src="/photo.jpg" position="face" />     // Focus on face
+ * <ProfileImage src="/photo.jpg" position="center" />    // Center of image
+ * <ProfileImage src="/photo.jpg" position="top" />       // Top of image
+ * <ProfileImage src="/photo.jpg" position="custom" customPosition="center 10%" />
+ * 
  * Props:
  * - src: Image URL (local path, external URL, or base64)
  * - alt: Alt text for accessibility
  * - fallbackText: Text to show if image fails (default: "AT")
  * - size: "small" | "medium" | "large" | "xlarge" (default: "large")
+ * - position: "face" | "center" | "top" | "custom" (default: "face")
+ * - customPosition: Custom object-position value (e.g., "center 10%")
  * - className: Additional CSS classes
  */
 
@@ -62,6 +70,8 @@ const ProfileImage = ({
     alt = "Profile Picture", 
     fallbackText = "AT",
     size = "large",
+    position = "face", // "face", "center", "top", "custom"
+    customPosition = "center 5%",
     className = "",
     ...props 
 }) => {
@@ -81,6 +91,14 @@ const ProfileImage = ({
         medium: "w-24 h-24 text-xl", 
         large: "w-32 h-32 md:w-40 md:h-40 text-2xl md:text-3xl",
         xlarge: "w-48 h-48 md:w-56 md:h-56 text-4xl md:text-5xl"
+    };
+
+    // Position configurations for different image types
+    const positionConfig = {
+        face: "center 5%",      // Focus on face area
+        center: "center center", // Center of image
+        top: "center top",       // Top of image
+        custom: customPosition   // Custom position
     };
 
     const handleImageLoad = () => {
@@ -117,8 +135,8 @@ const ProfileImage = ({
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
                 style={{
-                    // Focus on the upper portion of the image for face visibility
-                    objectPosition: 'center 15%',
+                    // Use position configuration for flexible image positioning
+                    objectPosition: positionConfig[position] || positionConfig.face,
                     // Ensure proper image fitting
                     objectFit: 'cover',
                     width: '100%',
