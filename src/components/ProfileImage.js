@@ -84,11 +84,13 @@ const ProfileImage = ({
     };
 
     const handleImageLoad = () => {
+        console.log('Image loaded successfully:', src);
         setImageLoaded(true);
         setImageError(false);
     };
 
-    const handleImageError = () => {
+    const handleImageError = (e) => {
+        console.log('Image failed to load:', src, e);
         setImageError(true);
         setImageLoaded(false);
     };
@@ -116,7 +118,7 @@ const ProfileImage = ({
                 transition={{ duration: 0.3 }}
                 style={{
                     // Focus on the upper portion of the image for face visibility
-                    objectPosition: 'center 20%',
+                    objectPosition: 'center 15%',
                     // Ensure proper image fitting
                     objectFit: 'cover',
                     width: '100%',

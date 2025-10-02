@@ -71,7 +71,7 @@ const Hero = () => {
                         className="mb-8 flex justify-center"
                     >
                         <ProfileImage
-                            src="https://via.placeholder.com/400x400/FFD700/000000?text=AT"
+                            src="/abhay.jpeg"
                             alt="Abhay Tiwari"
                             fallbackText="AT"
                             size="large"
