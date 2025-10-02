@@ -45,7 +45,7 @@ const Projects = () => {
             id: 1,
             title: "E-Commerce Platform",
             description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
-            image: getRandomUnsplashImage('webdev', { width: 600, height: 400 }),
+            image: "/abhay.jpeg",
             technologies: [
                 { name: "React", icon: FaReact, color: "#61DAFB" },
                 { name: "Node.js", icon: FaNodeJs, color: "#339933" },
@@ -125,7 +125,7 @@ const Projects = () => {
             id: 6,
             title: "Portfolio Website",
             description: "A modern, responsive portfolio website showcasing projects and skills with smooth animations.",
-            image: getRandomUnsplashImage('portfolio', { width: 600, height: 400 }),
+            image: "/abhay.jpeg",
             technologies: [
                 { name: "React", icon: FaReact, color: "#61DAFB" },
                 { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
@@ -135,7 +135,7 @@ const Projects = () => {
             category: "frontend",
             github: "https://github.com/abhayd95/portfolio",
             live: "https://abhayvirus.dev",
-            featured: false
+            featured: true
         }
     ];
 
