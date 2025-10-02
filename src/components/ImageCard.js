@@ -45,6 +45,8 @@ const ImageCard = ({
     title = "",
     description = "",
     size = "medium",
+    position = "face", // "face", "center", "top", "custom"
+    customPosition = "center top",
     className = "",
     onClick = null,
     ...props 
@@ -57,6 +59,14 @@ const ImageCard = ({
         small: "w-64 h-48",
         medium: "w-80 h-60", 
         large: "w-96 h-72"
+    };
+
+    // Position configurations for different image types
+    const positionConfig = {
+        face: "center top",      // Focus on face area
+        center: "center center", // Center of image
+        top: "center top",        // Top of image
+        custom: customPosition   // Custom position
     };
 
     const handleImageLoad = () => {
@@ -114,6 +124,9 @@ const ImageCard = ({
                     `}
                     onLoad={handleImageLoad}
                     onError={handleImageError}
+                    style={{
+                        objectPosition: positionConfig[position] || positionConfig.face
+                    }}
                 />
 
                 {/* Fallback Image */}

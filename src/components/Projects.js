@@ -232,6 +232,7 @@ const Projects = () => {
                                             src={project.image}
                                             alt={project.title}
                                             size="large"
+                                            position={project.image.includes('abhay.jpeg') ? 'face' : 'center'}
                                             className="w-full h-full rounded-none"
                                         />
                                         {project.featured && (

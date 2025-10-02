@@ -68,6 +68,7 @@ const PersonalImageShowcase = () => {
                                 title={image.title}
                                 description={image.description}
                                 size="medium"
+                                position={image.category === "personal" ? "face" : "center"}
                                 onClick={() => console.log(`Clicked on ${image.title}`)}
                             />
                             {image.featured && (
