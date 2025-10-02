@@ -71,7 +71,7 @@ const Hero = () => {
                     >
                         <div className="relative">
                             <motion.img
-                                src="/abhay.jpeg"
+                                src={`${window.location.origin}/abhay.jpeg?t=${Date.now()}`}
                                 alt="Abhay Tiwari"
                                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
                                 whileHover={{ scale: 1.05 }}
