@@ -71,11 +71,12 @@ const Hero = () => {
                     >
                         <div className="relative">
                             <motion.img
-                                src={`${window.location.origin}/abhay.jpeg?t=${Date.now()}`}
+                                src="/abhay.jpeg"
                                 alt="Abhay Tiwari"
                                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.3 }}
+                                loading="eager"
                                 onLoad={() => console.log('Image loaded successfully')}
                                 onError={(e) => {
                                     console.log('Image failed to load:', e);
