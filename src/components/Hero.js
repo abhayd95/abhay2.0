@@ -76,7 +76,19 @@ const Hero = () => {
                                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.3 }}
+                                onLoad={() => console.log('Image loaded successfully')}
+                                onError={(e) => {
+                                    console.log('Image failed to load:', e);
+                                    e.target.style.display = 'none';
+                                    e.target.nextSibling.style.display = 'flex';
+                                }}
                             />
+                            <div 
+                                className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border-4 border-primary/20 shadow-2xl flex items-center justify-center text-primary text-4xl font-bold"
+                                style={{ display: 'none' }}
+                            >
+                                AT
+                            </div>
                             <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
