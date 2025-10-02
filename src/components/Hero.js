@@ -75,7 +75,8 @@ const Hero = () => {
                             alt="Abhay Tiwari"
                             fallbackText="AT"
                             size="large"
-                            position="face"
+                            position="custom"
+                            customPosition="center 15%"
                         />
                     </motion.div>
 

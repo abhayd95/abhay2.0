@@ -95,9 +95,10 @@ const ProfileImage = ({
 
     // Position configurations for different image types
     const positionConfig = {
-        face: "center 5%",      // Focus on face area
+        face: "center top",      // Focus on very top for face area
         center: "center center", // Center of image
         top: "center top",       // Top of image
+        upper: "center 10%",     // Upper portion
         custom: customPosition   // Custom position
     };
 
