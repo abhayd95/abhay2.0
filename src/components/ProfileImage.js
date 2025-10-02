@@ -98,12 +98,14 @@ const ProfileImage = ({
         face: "center top",      // Focus on very top for face area
         center: "center center", // Center of image
         top: "center top",       // Top of image
-        upper: "center 10%",     // Upper portion
+        upper: "center 5%",      // Upper portion
+        veryTop: "center 0%",    // Very top
         custom: customPosition   // Custom position
     };
 
     const handleImageLoad = () => {
         console.log('Image loaded successfully:', src);
+        console.log('Using position:', positionConfig[position] || positionConfig.face);
         setImageLoaded(true);
         setImageError(false);
     };

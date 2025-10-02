@@ -76,7 +76,7 @@ const Hero = () => {
                             fallbackText="AT"
                             size="large"
                             position="custom"
-                            customPosition="center 15%"
+                            customPosition="center 0%"
                         />
                     </motion.div>
 
